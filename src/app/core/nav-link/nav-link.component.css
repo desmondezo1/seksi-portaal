@@ -1,0 +1,46 @@
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+}
+
+.navLinks .navLinkItem {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 0.99rem;
+    line-height: 1rem;
+}
+
+.navLinks > .dropdown > .dropdownButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navLinks > .dropdown > .dropdownMenu {
+    position: absolute;
+    bottom: 0;
+}
+
+.hamburgerMenu {
+    display: none;
+}
+
+@media screen and (max-width: 1090px) {
+    .navLinks{
+        display: none;
+    }
+    .hamburgerMenu {
+        display: flex;
+    }
+
+    .hamburgerMenu > button {
+        font-size: 2.5rem;
+        display: flex;
+        color: #FFFFFF;
+        background-color: transparent;
+        border: none;
+        font-weight: 300;
+    }
+}

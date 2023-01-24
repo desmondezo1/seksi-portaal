@@ -1,0 +1,46 @@
+.navBar {
+ height: 80px;
+ background: #141030;
+ border: 1px solid rgba(255, 255, 255, 0.1);
+ display: flex;
+ align-items: center;
+ padding: 0 12.3%;
+ justify-content: space-between;
+}
+
+.navBar .logo img{
+    width: 194px;
+    height: 41px;
+}
+.plusButton{
+    display: none;
+}
+
+@media screen and (max-width: 1090px) {
+    .navBar{
+        display: grid;
+        grid-template-areas: "navLink logo plusButton";
+        padding: 0 3.72%;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .navLink{
+        grid-area: navLink;
+    }
+
+    .logo {
+        grid-area: logo;
+       
+    }
+     .logo > img {
+        width: 170px!important;
+        height: 35px!important;
+     }
+
+    .plusButton{
+        display: flex;
+        grid-area: plusButton;
+    }
+}

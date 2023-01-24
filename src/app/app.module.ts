@@ -3,6 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppButtonModule } from './shared/components/atoms/button/button.module';
+import { AppImageModule } from './shared/components/atoms/image/image.module';
+import { HeaderComponent } from './core/header/header.component';
+import { HeaderModule } from './core/header/header.module';
+import { NavLinkComponent } from './core/nav-link/nav-link.component';
+import { HomeViewComponent } from './views/home-view/home-view.component';
+import { HomeViewModule } from './views/home-view/home-view.module';
+import { FooterModule } from './core/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +18,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AppButtonModule,
+    AppImageModule,
+    HeaderModule, 
+    HomeViewModule,
+    FooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

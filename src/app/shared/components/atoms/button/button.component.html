@@ -1,0 +1,15 @@
+<button
+	[type]="type"
+	(click)="onClick()"
+	[disabled]="isDisabled"
+	class="btn"
+    [style.width.px]="width"
+    [style.height.px]="height"
+    [style.padding]="padding"
+    [style.margin]="margin"
+    [style.border]="border"
+    >
+	<span>{{ buttonText }}</span>
+    <ng-content></ng-content>
+
+</button>

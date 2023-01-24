@@ -1,0 +1,114 @@
+.heroCardWrapper{
+    max-width: 700px;
+    width: 100%;
+    max-height: 211px;
+    position: relative;
+    background: rgba(254, 44, 182, 0.1);
+    border: 3px solid #FE2CB5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 31px 30px 25px 24px;
+
+}
+
+h1{
+    font-family: 'Avenir-black';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+p{
+    font-family: 'Avenir-book';
+    font-style: normal;
+    color: #FFFFFF;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 25px;
+    opacity: 0.7;
+    margin: 9px 0 16px 0;
+}
+
+svg {
+    margin-left: 8px;
+}
+
+.heroImage {
+  position: absolute;
+  right: 31px;
+  bottom: 0;
+  height: 236px;
+  width: 160px;
+  filter: drop-shadow(0px 4px 23px rgba(254, 44, 181, 0.27));
+}
+
+.heroImageWrapper {
+    width: 27%;
+    
+}
+
+@media screen and (max-width: 1124px) {
+    .heroCardWrapper{
+        max-height: 300px;  
+    }
+
+    h1{
+        height: 40px;
+        font-size: 1.8rem;
+    }
+
+    p{
+        height: 75px;
+        margin: 9px 0 36px 0;
+        max-width: 72.8%;
+    }
+
+}
+
+@media screen and (max-width: 720px) {
+    .heroImageWrapper > img {
+        max-width: 131px;
+        max-height: 193px;
+    }
+
+    .heroImageWrapper {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        opacity: 0.3;
+    }
+}
+
+@media screen and (max-width: 423px) {
+    p{
+        font-size: calc(15px + 0.390625vw);
+        max-width: 100%;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+    
+    .heroCardWrapper{
+        max-height: 400px;
+        height: auto;   
+    }
+
+    .heroTextAndButtonWrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+
+.heroCardWrapper{
+    max-height: 350px;
+    height: 100%;   
+}
+}

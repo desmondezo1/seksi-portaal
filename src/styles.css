@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'avenir-black';
+    src: url('assets/fonts/AvenirLTStd-Black.otf');
+}
+@font-face {
+    font-family: 'avenir-book';
+    src: url('assets/fonts/AvenirLTStd-Book.otf');
+}
+@font-face {
+    font-family: 'avenir-roman';
+    src: url('assets/fonts/AvenirLTStd-Roman.otf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'avenir-book','avenir-black';
+ 
+}
+
+html, body {
+    height: 100%;
+    background: #1D1841;
+}
