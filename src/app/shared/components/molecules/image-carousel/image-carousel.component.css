@@ -30,15 +30,16 @@
     right: 0;
 }
 
-.bgImage {
+.bgImage, .bgImageBlur {
     display: none;
 }
 
 .appImage {
     height: 100%;
+    border-radius: 10px 0 0 10px;
 }
 
-@media screen and (max-width: 1090px) {
+@media screen and (max-width: 720px) {
     .bgImage {
         display: block;
         position: absolute;
@@ -50,5 +51,19 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-clip: content-box;
+    }
+
+    .bgImageBlur {
+        display: flex;
+        height: 100%;
+        z-index: 1;
+        border-radius: 10px 10px 0 0;
+        width: 100%;
+        position: absolute;
+        backdrop-filter: blur(5px);
+    }
+
+    .appImage {
+        border-radius: 0;
     }
 }

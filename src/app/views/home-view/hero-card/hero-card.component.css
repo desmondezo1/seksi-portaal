@@ -104,11 +104,16 @@ svg {
     }
 }
 
-
 @media screen and (max-width: 350px) {
 
 .heroCardWrapper{
     max-height: 350px;
     height: 100%;   
 }
+}
+
+@media screen and (min-width: 1125px) and (max-width: 1202px) {
+    .heroCardWrapper{
+        max-height: 236px;
+    }
 }

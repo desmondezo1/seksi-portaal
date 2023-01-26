@@ -16,6 +16,11 @@
     background: #141030;
     border-radius: 10px;
 }
+
+main{
+    max-width: 700px;
+}
+
 .heroSection{
     margin-bottom: 31px;
 }
@@ -28,6 +33,7 @@
    flex-direction: column;
    gap: 14px;
    height: 100%;
+   align-items: center;
    margin-bottom: 10px;
 }
 
@@ -45,5 +51,8 @@
 @media screen and (max-width: 720px){
     .wrapper{
         padding: 0 7.44%;
+    }
+    .cardListSection {
+        gap: 17px;
     }
 }
