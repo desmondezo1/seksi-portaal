@@ -1,0 +1,7 @@
+<div class="wrapper" *ngIf="isImage">
+    <app-image-carousel [images]="media" [styles]="styles"></app-image-carousel>
+</div>
+
+<div class="wrapper" *ngIf="!isImage">
+    <app-video-carousel [videos]="media" [styles]="styles" ></app-video-carousel>
+</div>

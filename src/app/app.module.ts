@@ -11,10 +11,12 @@ import { NavLinkComponent } from './core/nav-link/nav-link.component';
 import { HomeViewComponent } from './views/home-view/home-view.component';
 import { HomeViewModule } from './views/home-view/home-view.module';
 import { FooterModule } from './core/footer/footer.module';
+import { TestsComponent } from './views/tests/tests.component';
+import { TestsModule } from './views/tests/tests.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,9 @@ import { FooterModule } from './core/footer/footer.module';
     AppImageModule,
     HeaderModule, 
     HomeViewModule,
-    FooterModule
+    FooterModule,
+
+    TestsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

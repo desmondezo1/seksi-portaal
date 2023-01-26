@@ -10,6 +10,10 @@
     font-family: 'avenir-roman';
     src: url('assets/fonts/AvenirLTStd-Roman.otf');
 }
+@font-face {
+    font-family: 'DM-sans';
+    src: url('assets/fonts/DMSans-Medium.ttf');
+}
 
 * {
     padding: 0;

@@ -1,0 +1,54 @@
+.slider{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide{
+    height: inherit;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.leftArrow, .rightArrow{
+    width: 50px;
+    height: 50px;
+    font-size: 3rem;
+    position: absolute;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.leftArrow{
+    left: 0;
+}
+
+.rightArrow{
+    right: 0;
+}
+
+.bgImage {
+    display: none;
+}
+
+.appImage {
+    height: 100%;
+}
+
+@media screen and (max-width: 1090px) {
+    .bgImage {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        border-radius: 10px 10px 0 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-clip: content-box;
+    }
+}

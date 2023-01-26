@@ -1,0 +1,128 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper .filterByRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.wrapper .filterByRow .filterByAds, .wrapper .filterByRow .filterByDate {
+    display: flex;
+    align-items: center;
+}
+
+* .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filterByDate, .filterByAds {
+    gap: 7px;
+}
+
+.wrapper .filterByRow .filterByAds p {
+    font-family: 'Avenir-black';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.wrapper .filterByRow .filterByAds > .icon {
+    font-size: 1.3rem;
+}
+
+.wrapper .filterByRow .filterByDate p {
+    font-family: 'Avenir-book';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 24px;
+    color: #FFFFFFB2;
+}
+
+.wrapper .filterByRow .filterByDate > .icon {
+    font-size: 1.2rem;
+}
+
+.wrapper .filterByRow .filterByDate > .text {
+    font-family: 'Avenir-book';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 2rem;
+    text-align: right;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+.wrapper .filterPillRow {
+    position: relative;
+}
+
+.wrapper .filterPillRow .btnWrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+}
+
+.wrapper .filterPillRow .btnWrapper::-webkit-scrollbar { 
+    width: 0 !important;
+    display: none; 
+  }
+
+
+
+.wrapper .filterPillRow .btnWrapper .pill {
+    font-family: 'Avenir-book';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 18px;
+    gap: 4px;
+    width: auto;
+    height: 30px;
+    opacity: 0.7;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    background: transparent;
+    flex-grow: 0;
+
+ }
+
+.pillActive {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 18px;
+    gap: 8px;
+    width: 106px;
+    height: 30px;
+    background: linear-gradient(180deg, #FE2CB5 0%, #FC4F43 100%);
+    border-radius: 6px;
+    border: none;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    color: #FFFFFF;
+}
+
+#gradientBox {
+    position: absolute;
+    z-index: 9;
+    height: 100%;
+    width: 40px;
+    right: 0;
+    top: 0;
+    background: linear-gradient(270deg, #1D1841 0%, rgba(29, 24, 65, 0) 100%);
+}
