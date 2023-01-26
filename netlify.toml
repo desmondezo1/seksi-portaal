@@ -11,7 +11,7 @@
   publish = "dist/seksi-portaal"
 
   # Default build command.
-  command = "ng build --prod"
+  command = "ng build"
 
 [[redirects]]
   from = "/*"
