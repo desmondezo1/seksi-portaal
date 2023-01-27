@@ -13,6 +13,8 @@ import { HomeViewModule } from './views/home-view/home-view.module';
 import { FooterModule } from './core/footer/footer.module';
 import { TestsComponent } from './views/tests/tests.component';
 import { TestsModule } from './views/tests/tests.module';
+import { DataService } from './services/data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,10 @@ import { TestsModule } from './views/tests/tests.module';
     HeaderModule, 
     HomeViewModule,
     FooterModule,
-
+    HttpClientModule,
     TestsModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

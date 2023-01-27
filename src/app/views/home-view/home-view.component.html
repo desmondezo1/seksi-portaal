@@ -7,11 +7,7 @@
             <app-filter-tab></app-filter-tab>
         </section>
         <section class="cardListSection">
-            <app-info-card class="infoCard"></app-info-card>
-            <app-info-card class="infoCard"></app-info-card>
-            <app-info-card class="infoCard"></app-info-card>
-            <app-info-card class="infoCard"></app-info-card>
-            <app-info-card class="infoCard"></app-info-card>
+            <app-info-card class="infoCard" *ngFor="let ad of ads?.list" [ad]="ad"></app-info-card>
         </section>
        
     </main>
