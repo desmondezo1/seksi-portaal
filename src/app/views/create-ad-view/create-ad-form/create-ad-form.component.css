@@ -104,7 +104,7 @@
 }
 
 .media > .upload {
-    width: 329px;
+    max-width: 329px;
     height: 204px;
     display: flex;
     flex-direction: column;
@@ -216,6 +216,15 @@
 }
 
 @media screen and (max-width: 920px) {
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 44px 5.8% 48px 5.8%;
+
+    }
+
     .formFieldsSection > form {
         display: flex;
         flex-direction: column;
@@ -234,4 +243,22 @@
         gap: 8px;
         flex-wrap: wrap;
     }
+
+    .ageGroup{
+        flex-direction: column;
+        row-gap: 16px;
+        width: 100%;
+    }
+
+    .ageGroup > .age {
+        /* flex-grow: ; */
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .ageGroup > .sugu{
+        width: 100%;
+        max-width: 100%;
+    }
+
 }
