@@ -1,6 +1,6 @@
 .wrapper{
-    width: 824px;
-    height: 743px;
+    max-width: 824px;
+    min-height: 743px;
     background: rgba(254, 44, 181, 0.1);
     border: 2px solid #FE2CB5;
     border-radius: 10px;
@@ -213,4 +213,25 @@
 
 .media {
     grid-area: media;
+}
+
+@media screen and (max-width: 920px) {
+    .formFieldsSection > form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%
+    }
+
+    .formFieldsSection .formControl{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .wrapper .btnGroup {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
 }
