@@ -15,6 +15,7 @@ export class InfoCardComponent implements OnInit {
     {url: 'assets/images/sexycollege.png'}
   ]
   @Input() ad: AdsInterface = {}
+
   isPhoneArrayAvailable (): boolean {
     if (typeof this.ad?.phoneArray === 'object') {
        if (this.ad?.phoneArray.length >  0){ 
@@ -53,6 +54,8 @@ export class InfoCardComponent implements OnInit {
 
   ngOnInit(){
     // this.formatMedia();
+    if (this.ad.post_date != undefined) {this.ad.post_date = `${+this.ad.post_date * 1000}`;}
+     
   }
 
 

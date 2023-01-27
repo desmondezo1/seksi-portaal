@@ -13,7 +13,7 @@
     </div>
     <a class="navLinkItem" href="">Lemmikud</a>
     <a  class="navLinkItem" href="">Kontakt</a>
-    <app-button [text]="'Lisa kuulutus'" [width]="140" [height]="46"> </app-button>
+    <app-button (btnClick)="goToCreatePage()"  [text]="'Lisa kuulutus'" [width]="140" [height]="46"> </app-button>
 </div>
 
 <div class="hamburgerMenu">

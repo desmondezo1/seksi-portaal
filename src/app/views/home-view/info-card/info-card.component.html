@@ -3,12 +3,12 @@
         <app-media class="appMedia" [media]="media" [styles]='{ "border-radius": "inherit", "width": "inherit", "min-width": "200px", "height": "inherit", "position": "relative", "z-index": 2}'></app-media>
     </div>
     <div class="info">
-        <h2 class="title"> {{ ad?.name}} ({{ad?.age}})</h2>
+        <h2 class="title"> {{ ad.name}} ({{ad.age}})</h2>
         <div class="iconRow">
             <div class="location iconTextWrap">
                <span class="icon locationIcon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024"><path fill="#FFFFFFB2" d="M288 896h448q32 0 32 32t-32 32H288q-32 0-32-32t32-32z"/><path fill="#FFFFFFB2" d="M800 416a288 288 0 1 0-576 0c0 118.144 94.528 272.128 288 456.576C705.472 688.128 800 534.144 800 416zM512 960C277.312 746.688 160 565.312 160 416a352 352 0 0 1 704 0c0 149.312-117.312 330.688-352 544z"/><path fill="#FFFFFFB2" d="M512 512a96 96 0 1 0 0-192a96 96 0 0 0 0 192zm0 64a160 160 0 1 1 0-320a160 160 0 0 1 0 320z"/></svg>
-               </span> <span>{{ad?.county}}</span> 
+               </span> <span>{{ad.county}}</span> 
             </div>
 
             <span class="icon dot">
@@ -20,7 +20,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path fill="none" stroke="#FFFFFFB2" stroke-miterlimit="10" stroke-width="32" d="M256 64C150 64 64 150 64 256s86 192 192 192s192-86 192-192S362 64 256 64Z"/><path fill="none" stroke="#FFFFFFB2" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 128v144h96"/></svg>
                 </span>
                 <span>
-                    {{ad?.site}}  
+                    {{ad.site}}  
                 </span>
             </div>
 
@@ -33,12 +33,12 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 32 32"><path fill="#FFFFFFB2" d="M26 4h-4V2h-2v2h-8V2h-2v2H6c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 22H6V12h20v14zm0-16H6V6h4v2h2V6h8v2h2V6h4v4z"/></svg>
                 </span>
                 <span>
-                    {{ad?.post_date}}
+                    {{ad.post_date | date:'dd.MM.Y'}}
                 </span>
             </div>
         </div>
         <div class="details">
-            {{ad?.content | slice:0:130 }}...
+            {{ad.content | slice:0:130 }}...
         </div>
         <div class="buttonGroup">
             <button *ngIf="isPhoneArrayAvailable()" class="btn1">

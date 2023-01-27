@@ -1,0 +1,84 @@
+
+<div class="wrapper">
+    <section class="formContent">
+        <h1>Lisa kuulutus</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard.</p>
+        <div class="userCategoryTab">
+            <p>Kategooria *</p>
+            <div class="btnGroup">
+                <button (click)="selectCategory('Naine otsib meest')" class="categoryBtn">Naine otsib meest <span class="selected"> x </span></button>
+                <button (click)="selectCategory('Mees otsib naist')" class="categoryBtn">Mees otsib naist</button>
+                <button (click)="selectCategory('Naine otsib naist')" class="categoryBtn">Naine otsib naist</button>
+                <button (click)="selectCategory('Mees otsib meest')" class="categoryBtn">Mees otsib meest</button>
+            </div>
+        </div>
+
+        <section class="formFieldsSection">
+            <form [formGroup]="createAd" >
+                <!-- form input for name  -->
+                <div class="formControl name">
+                    <label for="name">Nimi *</label>
+                    <input type="text" name="name" id="nameInput" formControlName="name">
+                </div>
+                <!-- form input for location  -->
+                <div class="formControl location">
+                    <label for="location">Asukoht *</label>
+                    <input type="text" name="location" id="locationInput" formControlName="location">
+                </div>
+
+                <!-- form input for email  -->
+                <div class="formControl email">
+                    <label for="Email">Email *</label>
+                    <input type="text" name="email" id="emailInput" formControlName="email">
+                </div>
+
+                <!-- form input for description  -->
+                <div class="formControl desc">
+                    <label for="description">Kirjeldus *</label>
+                    <textarea name="description" id="descriptionInput" formControlName="description"></textarea>
+                </div>
+
+
+                <!-- input group  -->
+                <div class="formControlGroup  ageGroup">
+                    <div class="formControl age">
+                        <label for="age">Vanus *</label>
+                        <input type="text" name="age" id="age" formControlName="age">
+                    </div>
+                    <div class="formControl sugu">
+                        <label for="sugu">Sugu *</label>
+                        <input type="text" name="sugu" id="sugu" formControlName="sugu">
+                    </div>
+                </div>
+
+                <!-- input for telephone number  -->
+                <div class="formControl phone">
+                    <label for="phone">Telefon</label>
+                    <input type="text" name="phone" id="phone" formControlName="phone">
+                </div>
+
+                <div class="formControl media">
+                    <label for="media">Pildid / video *</label>
+                    <div class="upload" (click)="hiddenFileInput.click()">
+                        <span class="uploadIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="#fe2cb5" d="M12 16q-.425 0-.712-.288Q11 15.425 11 15V7.85L9.125 9.725q-.3.3-.7.3q-.4 0-.725-.325q-.3-.3-.287-.713q.012-.412.287-.687l3.6-3.6q.15-.15.325-.213q.175-.062.375-.062t.375.062q.175.063.325.213l3.6 3.6q.3.3.287.712q-.012.413-.287.688q-.3.3-.712.312q-.413.013-.713-.287L13 7.85V15q0 .425-.287.712Q12.425 16 12 16Zm-6 4q-.825 0-1.412-.587Q4 18.825 4 18v-2q0-.425.287-.713Q4.575 15 5 15t.713.287Q6 15.575 6 16v2h12v-2q0-.425.288-.713Q18.575 15 19 15t.712.287Q20 15.575 20 16v2q0 .825-.587 1.413Q18.825 20 18 20Z"/></svg>
+                        </span>
+                        <h3>Lisa pildid / video</h3>
+                        <p>Lisa oma kuulutusele pilte või videoid (Max suurus 2MB)</p>
+                    </div>
+                    <input type="file" #hiddenFileInput name="media" id="mediaInput" formControlName="media">
+                </div>
+            
+                <div class="submitBtn">
+                    <button type="submit">
+                        <span>Lisa kuulutus</span>
+                        <span class="submitBtnIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="white" d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6Z"/></svg>
+                        </span>
+                    </button>
+                </div>
+            </form>
+
+        </section>
+    </section>
+</div>

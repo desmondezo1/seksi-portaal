@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-link',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-link.component.css']
 })
 export class NavLinkComponent {
-
+  constructor(private router: Router) {
+    
+  }
+  goToCreatePage(){
+    this.router.navigate(['/create']);
+  }
 }

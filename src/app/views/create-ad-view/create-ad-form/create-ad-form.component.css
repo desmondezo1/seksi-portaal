@@ -1,0 +1,216 @@
+.wrapper{
+    width: 824px;
+    height: 743px;
+    background: rgba(254, 44, 181, 0.1);
+    border: 2px solid #FE2CB5;
+    border-radius: 10px;
+    padding: 44px 5.82% 5.82% 48px;
+}
+
+.wrapper .formContent h1 {
+    font-family: 'Avenir-black';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2.2rem;
+    line-height: 40px;
+    color: #FFFFFF;
+    margin-bottom: 9px;
+
+}
+
+.wrapper .formContent p {
+    font-family: 'avenir-roman';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 25px;
+    color: #FFFFFF;
+    opacity: 0.7;
+} 
+
+.wrapper .userCategoryTab{
+    margin-bottom: 16px;
+    margin-top: 28px;
+}
+
+.wrapper .btnGroup {
+    display: flex;
+    gap: 8px;
+}
+
+.wrapper .btnGroup button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 18px;
+    gap: 4px;
+    height: 30px;
+    opacity: 0.7;
+    border: 1px solid #FFFFFF;
+    border-radius: 6px;
+    color: #FFFFFF;
+    background: transparent;
+    flex: none;
+    order: 1;
+    flex-grow: 0
+}
+
+/* form styles  */
+
+.formFieldsSection{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.formFieldsSection > form {
+    display: grid;
+    column-gap: 32px;
+    row-gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: 
+    "name ageGroup"
+    "location phone"
+    "email media"
+    "desc media"
+    "submitBtn ."
+    ;
+}
+
+.formFieldsSection .formControl{
+    display: flex;
+    flex-direction: column;
+    max-width: 332px;
+}
+
+.formFieldsSection .formControl > label{
+    font-size: 14px;
+    line-height: 14px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.formFieldsSection .formControl > input {
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 13px 24px;
+    border: none;
+}
+
+.desc textarea{
+    min-height: 128px;
+}
+
+.media > .upload {
+    width: 329px;
+    height: 204px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #1D1841;
+    border: 2px dashed #FE2CB5;
+    border-radius: 10px;
+}
+
+.media > .upload  .uploadIcon {
+    font-size: 6rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.media > .upload h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Avenir-black';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.media > .upload p { 
+    max-width: 244px;
+    text-align: center;
+}
+
+.media > input[type='file']{
+    position: absolute;
+    top: -700000px;
+}
+
+.formFieldsSection .formControl > input[type='text']{
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.name {
+    grid-area: name;
+}
+
+.location {
+    grid-area: location;
+}
+
+.email {
+    grid-area: email;
+}
+
+.desc{
+    grid-area: desc;
+}
+
+.ageGroup{
+    grid-area: ageGroup;
+    display: flex;
+    column-gap: 32px;
+}
+
+.ageGroup > .age {
+    /* flex-grow: ; */
+    width: 24.09%;
+    max-width: 80px;
+}
+
+.ageGroup > .sugu{
+    width: 66.2%;
+    max-width: 220px;
+}
+
+.submitBtn{
+    grid-area: submitBtn;
+    margin-top: 16px;
+}
+
+.submitBtn button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 8px;
+    width: 150px;
+    height: 40px;
+    background: linear-gradient(180deg, #FE2AB9 0%, #FC4F41 100%);
+    border-radius: 6px;
+    border: none;
+    color: #FFFFFF;
+}
+.submitBtn button .submitBtnIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.phone {
+    grid-area: phone;
+}
+
+.media {
+    grid-area: media;
+}
