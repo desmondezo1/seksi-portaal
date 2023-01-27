@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="details">
-            {{ad?.content}}
+            {{ad?.content | slice:0:130 }}...
         </div>
         <div class="buttonGroup">
             <button *ngIf="isPhoneArrayAvailable()" class="btn1">
