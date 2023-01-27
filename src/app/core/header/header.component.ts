@@ -9,8 +9,11 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   constructor(private router: Router){}
 
-  createAd(){
+  createAd():void{
     this.router.navigate(['/create'])
+  }
+  goHome():void{
+    this.router.navigate(['/'])
   }
 
 }
