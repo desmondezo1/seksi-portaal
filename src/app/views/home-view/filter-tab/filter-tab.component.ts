@@ -6,11 +6,16 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./filter-tab.component.css']
 })
 export class FilterTabComponent {
-  btn: string = '';
+  btn: string = 'kõik';
 
   @Output() filterValue = new EventEmitter();
   filterByCounty(value: string){
-    this.btn = value;
+    
+    if(value == ""){
+      this.btn = 'kõik';
+    }else{
+      this.btn = value;
+    }
     this.filterValue.emit(value);
   }
 }
