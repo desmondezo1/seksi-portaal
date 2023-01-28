@@ -27,6 +27,13 @@ export class InfoCardComponent implements OnInit {
     return false
   }
 
+  getDate(): number {
+    if (this.ad.post_date !== undefined) {
+      return this.ad.post_date * 1000;
+    }
+    return 0;
+    
+  }
   isMailArrayAvailable (): boolean {
     if (typeof this.ad?.mailArray === 'object') {
        if (this.ad?.mailArray.length >  0){ 
@@ -62,8 +69,12 @@ export class InfoCardComponent implements OnInit {
 
   ngOnInit(){
     // this.formatMedia();
-    if (this.ad.post_date != undefined) {this.ad.post_date = `${+this.ad.post_date * 1000}`;}
+    // if (this.ad.post_date != undefined) {this.ad.post_date = `${+this.ad.post_date * 1000}`;}
      
+  }
+
+  ngOnDestroy(){
+    this.ad = {};
   }
 
 

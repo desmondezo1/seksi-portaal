@@ -2,7 +2,7 @@
 
 export interface AdsInterface {
          _id?:string  ;
-         post_date?:string  ;
+         post_date?:number  ;
          image?:string  ;
          name?: string  ;
          site?:string  ;
