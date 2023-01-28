@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-filter-tab',
@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./filter-tab.component.css']
 })
 export class FilterTabComponent {
+  btn: string = '';
 
+  @Output() filterValue = new EventEmitter();
+  filterByCounty(value: string){
+    this.btn = value;
+    this.filterValue.emit(value);
+  }
 }

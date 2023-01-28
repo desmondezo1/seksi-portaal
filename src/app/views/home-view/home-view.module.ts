@@ -4,6 +4,7 @@ import { HomeViewComponent } from './home-view.component';
 import { HeroCardModule } from './hero-card/hero-card.module';
 import { InfoCardModule } from './info-card/info-card.module';
 import { FilterTabModule } from './filter-tab/filter-tab.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -13,7 +14,8 @@ import { FilterTabModule } from './filter-tab/filter-tab.module';
     CommonModule,
     HeroCardModule, 
     InfoCardModule, 
-    FilterTabModule
+    FilterTabModule,
+    NgxPaginationModule,
   ],
   exports: [HomeViewComponent]
 })

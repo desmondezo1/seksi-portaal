@@ -6,3 +6,9 @@ footer{
     background: #141030;
     padding: 64px 12.3% 0 12.3%;
 }
+
+@media screen and (max-width: 720px){
+    footer{
+        display: none;
+    }
+}

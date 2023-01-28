@@ -31,7 +31,7 @@ import { CreateAdViewModule } from './views/create-ad-view/create-ad-view.module
     FooterModule,
     HttpClientModule,
     TestsModule,
-    CreateAdViewModule
+    CreateAdViewModule,
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

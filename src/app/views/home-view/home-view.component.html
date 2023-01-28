@@ -4,13 +4,29 @@
              <app-hero-card></app-hero-card>
         </section>
         <section class="filterSectoin">
-            <app-filter-tab></app-filter-tab>
+            <app-filter-tab (filterValue)="filterByCounty($event)"></app-filter-tab>
         </section>
         <section class="cardListSection">
-            <app-info-card class="infoCard" *ngFor="let ad of ads?.list" [ad]="ad"></app-info-card>
+            <app-info-card class="infoCard"
+             *ngFor="let ad of list | paginate: config; let i = index" [ad]="ad">
+            </app-info-card>
+            <pagination-controls [id]="'advanced'"
+            [maxSize]="maxSize"
+            [directionLinks]="directionLinks"
+            [autoHide]="autoHide"
+            [responsive]="responsive"
+            [previousLabel]="labels.previousLabel"
+            [nextLabel]="labels.nextLabel"
+            [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
+            [screenReaderPageLabel]="labels.screenReaderPageLabel"
+            [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
+            (pageChange)="onPageChange($event)"
+            (pageBoundsCorrection)="onPageBoundsCorrection($event)">
+          </pagination-controls> 
         </section>
        
-    </main>
+
+   </main>
     
     <div class="sideNav">Side Nv</div>
 </div>

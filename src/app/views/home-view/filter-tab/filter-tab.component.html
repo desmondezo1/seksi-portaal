@@ -19,20 +19,20 @@
 
     <div class="filterPillRow">
         <div class="btnWrapper">
-            <button class="pill">Harjumaa</button>
-            <button class="pill">Lääne-Virumaa</button>
-            <button class="pill">Tartumaa</button>
-            <button class="pill">Pärnumaa</button>
-            <button class="pill">Ida-Virumaa</button>
-            <button class="pill">Viljandimaa</button>
-            <button class="pill">Raplamaa</button>
-            <button class="pill">Võrumaa</button>
-            <button class="pill">Saaremaa</button>
-            <button class="pill">Jõgevamaa</button>
-            <button class="pill">Valgamaa</button>
-            <button class="pill">Läänemaa</button>
-            <button class="pill">Hiiumaa</button>
-            <button class="pill">Järvamaa</button>
+            <button [ngClass]="btn == 'Harjumaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Harjumaa')" >Harjumaa</button>
+            <button [ngClass]="btn == 'Lääne-Virumaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Lääne-Virumaa')">Lääne-Virumaa</button>
+            <button [ngClass]="btn == 'Tartumaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Tartumaa')" >Tartumaa</button>
+            <button [ngClass]="btn == 'Pärnumaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Pärnumaa')" >Pärnumaa</button>
+            <button [ngClass]="btn == 'Ida-Virumaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Ida-Virumaa')" (click)="filterByCounty('Ida-Virumaa')" >Ida-Virumaa</button>
+            <button [ngClass]="btn == 'Viljandimaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Viljandimaa')" >Viljandimaa</button>
+            <button [ngClass]="btn == 'Raplamaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Raplamaa')" >Raplamaa</button>
+            <button [ngClass]="btn == 'Võrumaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Võrumaa')" >Võrumaa</button>
+            <button [ngClass]="btn == 'Saaremaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Saaremaa')" >Saaremaa</button>
+            <button [ngClass]="btn == 'Jõgevamaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Jõgevamaa')" >Jõgevamaa</button>
+            <button [ngClass]="btn == 'Valgamaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Valgamaa')" >Valgamaa</button>
+            <button [ngClass]="btn == 'Läänemaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Läänemaa')" >Läänemaa</button>
+            <button [ngClass]="btn == 'Hiiumaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Hiiumaa')" >Hiiumaa</button>
+            <button [ngClass]="btn == 'Järvamaa' ? 'pillActive' : 'pill'" (click)="filterByCounty('Järvamaa')" >Järvamaa</button>
         </div>
 
         <span id="gradientBox">
