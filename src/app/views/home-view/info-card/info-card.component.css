@@ -26,6 +26,7 @@
 .wrapper .info{
     padding: 25px 30px 21px 24px;
     position: relative;
+    flex-grow: 1;
 }
 
 .wrapper .info .favButtonWrapper, .activeFavButton{

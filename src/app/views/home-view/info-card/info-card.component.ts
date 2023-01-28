@@ -50,8 +50,8 @@ export class InfoCardComponent implements OnInit {
   }
 
   formatMedia (): void {
-    // if(typeof this.ad.imageArray === 'object' ){
-    //     if (this.ad.imageArray?.length > 1) {
+    if(typeof this.ad.imageArray === 'object' ){
+        if (this.ad.imageArray?.length > 1) {
             const mediaArray = this.ad.imageArray;
             const newArray = mediaArray?.map((path) => {
                return { url: `${environment.baseUrl}/assets/images/thumbs/${path}.jpg`}
@@ -59,12 +59,12 @@ export class InfoCardComponent implements OnInit {
             newArray?.push({ url : `https://${this.ad.site}/${this.ad.image}`})
             this.media = newArray as ImageCarouselInterface[];
             console.log({media: this.media});
-        // } else {
-        //   this.media =  `${this.ad.site}/${this.ad.image}`;
-        //   return;
-        // }
+        } else {
+          this.media =  `${this.ad.site}/${this.ad.image}`;
+          return;
+        }
     }
-
+  }
     
 
   ngOnInit(){
