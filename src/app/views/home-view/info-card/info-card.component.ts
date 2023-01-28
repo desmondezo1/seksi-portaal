@@ -16,6 +16,8 @@ export class InfoCardComponent implements OnInit {
   ]
   @Input() ad: AdsInterface = {}
 
+  btn: string = '';
+
   isPhoneArrayAvailable (): boolean {
     if (typeof this.ad?.phoneArray === 'object') {
        if (this.ad?.phoneArray.length >  0){ 
@@ -32,6 +34,12 @@ export class InfoCardComponent implements OnInit {
       }
     }
     return false
+  }
+
+  setFavourite(id: string | undefined){
+    if (typeof id === "string") {
+         this.btn = id;
+    }
   }
 
   formatMedia (): void {
