@@ -11,6 +11,7 @@
     border-radius: 10px;
     display: flex;
     flex-direction: row;
+    margin-bottom: 16px;
 }
 
 .wrapper .media{
@@ -168,6 +169,7 @@
         justify-content: space-between;
         border-radius: 10px 10px 10px 10px;
         min-width: 0;
+        width: 100%;
     }
 
     .wrapper .media {

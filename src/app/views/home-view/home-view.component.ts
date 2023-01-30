@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { PaginationInstance } from 'ngx-pagination';
-import { from } from 'rxjs';
+import { filter, from, map, pairwise, throttleTime } from 'rxjs';
 import { AdsInterface } from 'src/app/interfaces/ads.interface';
 import { AdsListInterface } from 'src/app/interfaces/adslist.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -15,11 +16,30 @@ interface Params {
   styleUrls: ['./home-view.component.css']
 })
 export class HomeViewComponent implements OnInit {
-    constructor(private dataService: DataService){}
+
+    constructor(
+      private dataService: DataService, 
+      private ngZone: NgZone
+      ){}
     offset: number = 0;
     total: number = 0;
     limit: number = 20;
     list: any | null = [];
+    @ViewChild(CdkVirtualScrollViewport) scroller: CdkVirtualScrollViewport|null= null;
+
+    ngAfterViewInit(){
+      this.scroller?.elementScrolled()
+      .pipe(
+        map(() => this.scroller?.measureScrollOffset('bottom')),
+        pairwise(),
+        filter(([y1, y2]) => (y2 !== undefined && y1 !== undefined && y2 < y1) && (y2 < 140)),
+        throttleTime(200)
+      ).subscribe(() => {
+        this.ngZone.run(() => {
+          this.getAds()
+        })
+      })
+    }
 
     public filter: string = '';
     public maxSize: number = 7;
@@ -68,7 +88,7 @@ export class HomeViewComponent implements OnInit {
     }
 
     filterByCounty(value: string): void{
-      this.getAds({ offset: 0, limit: 20,county: value})
+      this.getAds({ offset: 0, limit: null,county: value})
     }
 
     ngOnInit(){

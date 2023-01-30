@@ -16,7 +16,6 @@ import { TestsModule } from './views/tests/tests.module';
 import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateAdViewModule } from './views/create-ad-view/create-ad-view.module';
-
 @NgModule({
   declarations: [
     AppComponent,
