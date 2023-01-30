@@ -5,6 +5,7 @@ import { HeroCardModule } from './hero-card/hero-card.module';
 import { InfoCardModule } from './info-card/info-card.module';
 import { FilterTabModule } from './filter-tab/filter-tab.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ScrollingModule } from "@angular/cdk/scrolling";
 
 
 
@@ -16,6 +17,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     InfoCardModule, 
     FilterTabModule,
     NgxPaginationModule,
+    ScrollingModule,
   ],
   exports: [HomeViewComponent]
 })

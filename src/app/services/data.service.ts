@@ -16,7 +16,7 @@ export class DataService {
   BaseUrl = environment.baseUrl;
   constructor( private http: HttpClient) { }
 
-  getAds(options: Params = {offset: 0, limit : 20,  county :''}):Observable<any> {
+  getAds(options: Params = {offset: 0, limit : null,  county :''}):Observable<any> {
     const {offset, limit ,  county} = options;
     const getOptions: { params : any | Params} = { params: {}}
     if(offset) getOptions.params.offset = offset;
