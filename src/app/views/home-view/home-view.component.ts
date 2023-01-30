@@ -1,7 +1,7 @@
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
 import { PaginationInstance } from 'ngx-pagination';
-import { filter, from, map, pairwise, throttleTime } from 'rxjs';
+import { BehaviorSubject, filter, from, map, pairwise, throttleTime } from 'rxjs';
 import { AdsInterface } from 'src/app/interfaces/ads.interface';
 import { AdsListInterface } from 'src/app/interfaces/adslist.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -22,24 +22,13 @@ export class HomeViewComponent implements OnInit {
       private ngZone: NgZone
       ){}
     offset: number = 0;
+    offsset = new BehaviorSubject(null);
     total: number = 0;
     limit: number = 20;
     list: any | null = [];
-    @ViewChild(CdkVirtualScrollViewport) scroller: CdkVirtualScrollViewport|null= null;
-
-    ngAfterViewInit(){
-      this.scroller?.elementScrolled()
-      .pipe(
-        map(() => this.scroller?.measureScrollOffset('bottom')),
-        pairwise(),
-        filter(([y1, y2]) => (y2 !== undefined && y1 !== undefined && y2 < y1) && (y2 < 140)),
-        throttleTime(200)
-      ).subscribe(() => {
-        this.ngZone.run(() => {
-          this.getAds()
-        })
-      })
-    }
+    theEnd: boolean = false;
+    @ViewChild(CdkVirtualScrollViewport) 
+    scroller: CdkVirtualScrollViewport|null= null;
 
     public filter: string = '';
     public maxSize: number = 7;
@@ -47,33 +36,12 @@ export class HomeViewComponent implements OnInit {
     public autoHide: boolean = false;
     public responsive: boolean = false;
 
-    public labels: any = {
-      previousLabel: 'Previous',
-      nextLabel: 'Next',
-      screenReaderPaginationLabel: 'Pagination',
-      screenReaderPageLabel: 'page',
-      screenReaderCurrentLabel: `You're on page`
-  };
-
     ads: AdsListInterface | null = {
       requestTime: 0,
       length: 0,
        list: [] 
       };
-      
-      public config: PaginationInstance = {
-        id: 'advanced',
-        itemsPerPage: 10,
-        currentPage: 1
-    };
 
-    onPageChange(number: number) {
-      this.config.currentPage = number;
-  }
-  onPageBoundsCorrection(number: number) {
-    this.config.currentPage = number;
-  }
-      
     getAds(params: Params = {offset: 0, limit : null,  county :''}){
       const { offset, limit, county} = params;
       console.log({offset, limit ,  county});
@@ -90,6 +58,7 @@ export class HomeViewComponent implements OnInit {
     filterByCounty(value: string): void{
       this.getAds({ offset: 0, limit: null,county: value})
     }
+
 
     ngOnInit(){
       this.getAds();
