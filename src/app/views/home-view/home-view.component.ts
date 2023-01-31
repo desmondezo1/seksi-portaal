@@ -42,7 +42,7 @@ export class HomeViewComponent implements OnInit {
       };
 
       loadMoreData(index: number){
-        if (index === this.list.length - 1) {
+        if (index === this.list.length - 3) {
             this.offset += 20;
             this.dataService.getAds({offset: this.offset, limit: 20, from: this.list[index].post_date})
             .subscribe({
