@@ -7,25 +7,11 @@
             <app-filter-tab (filterValue)="filterByCounty($event)"></app-filter-tab>
         </section>
         <section class="cardListSection">
-            <cdk-virtual-scroll-viewport scrollWindow class="virtual-Veiw" [itemSize]="399">
+            <cdk-virtual-scroll-viewport (scrolledIndexChange)="loadMoreData($event)" scrollWindow class="virtual-Veiw" [itemSize]="390">
                 <app-info-card  class="infoCard" 
                 *cdkVirtualFor="let ad of list; let i = index" [ad]="ad">
                 </app-info-card> 
             </cdk-virtual-scroll-viewport>
-
-            <!-- <pagination-controls [id]="'advanced'"
-            [maxSize]="maxSize"
-            [directionLinks]="directionLinks"
-            [autoHide]="autoHide"
-            [responsive]="responsive"
-            [previousLabel]="labels.previousLabel"
-            [nextLabel]="labels.nextLabel"
-            [screenReaderPaginationLabel]="labels.screenReaderPaginationLabel"
-            [screenReaderPageLabel]="labels.screenReaderPageLabel"
-            [screenReaderCurrentLabel]="labels.screenReaderCurrentLabel"
-            (pageChange)="onPageChange($event)"
-            (pageBoundsCorrection)="onPageBoundsCorrection($event)">
-          </pagination-controls>  -->
         </section>
        
 

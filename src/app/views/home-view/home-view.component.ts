@@ -19,13 +19,12 @@ export class HomeViewComponent implements OnInit {
 
     constructor(
       private dataService: DataService, 
-      private ngZone: NgZone
       ){}
+
     offset: number = 0;
-    offsset = new BehaviorSubject(null);
     total: number = 0;
     limit: number = 20;
-    list: any | null = [];
+    list: AdsInterface[] = [];
     theEnd: boolean = false;
     @ViewChild(CdkVirtualScrollViewport) 
     scroller: CdkVirtualScrollViewport|null= null;
@@ -41,6 +40,21 @@ export class HomeViewComponent implements OnInit {
       length: 0,
        list: [] 
       };
+
+      loadMoreData(index: number){
+        if (index === this.list.length - 1) {
+            this.offset += 20;
+            this.dataService.getAds({offset: this.offset, limit: 20, from: this.list[index].post_date})
+            .subscribe({
+              next: (data: AdsListInterface) => {
+              
+              this.list = this.list.concat(data.list);
+            
+              console.log({data})},
+              error: (error) => { console.log({error})} })
+          }
+        }
+      
 
     getAds(params: Params = {offset: 0, limit : null,  county :''}){
       const { offset, limit, county} = params;

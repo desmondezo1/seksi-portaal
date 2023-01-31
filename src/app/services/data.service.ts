@@ -7,6 +7,7 @@ interface Params {
   offset?: number;
   limit?: number|null;
   county?: string;
+  from?: number;
 }
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,11 @@ export class DataService {
   constructor( private http: HttpClient) { }
 
   getAds(options: Params = {offset: 0, limit : null,  county :''}):Observable<any> {
-    const {offset, limit ,  county} = options;
+    const {offset, limit , from, county} = options;
     const getOptions: { params : any | Params} = { params: {}}
     if(offset) getOptions.params.offset = offset;
     if(limit) getOptions.params.limit = limit;
+    if(from) getOptions.params.from = from;
     if(county) getOptions.params.county = county;
     return this.http.get(this.BaseUrl + `/api/list`, getOptions)
     .pipe(
