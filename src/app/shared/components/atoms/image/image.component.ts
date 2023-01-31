@@ -10,7 +10,7 @@ export class ImageComponent {
   @Input() height: any = 'auto';
   @Input() maxheight: any = 'auto';
   @Input() maxwidth: any = 'auto';
-  @Input() src: string = '';
+  @Input() src: string = 'assets/images/av.jpg';
   @Input() styles: object = {};
 
 

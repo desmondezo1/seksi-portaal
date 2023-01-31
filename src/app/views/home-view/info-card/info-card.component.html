@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="media">
-        <app-media class="appMedia" [media]="media" [styles]='{ "border-radius": "inherit", "width": "inherit", "min-width": "200px", "height": "inherit", "position": "relative", "z-index": 2}'></app-media>
+        <app-media class="appMedia" [media]="formatMedia()" [styles]='{ "border-radius": "inherit", "width": "inherit", "min-width": "200px", "height": "inherit", "position": "relative", "z-index": 2}'></app-media>
     </div>
     <div class="info">
         <h2 class="title"> {{ ad.name}} ({{ad.age}})</h2>

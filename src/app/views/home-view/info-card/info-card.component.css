@@ -16,6 +16,7 @@
 
 .wrapper .media{
     height: 100%;
+    filter:blur(10px)
 }
 
 .wrapper .media > img {

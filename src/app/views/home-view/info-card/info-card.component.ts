@@ -49,7 +49,7 @@ export class InfoCardComponent implements OnInit {
     }
   }
 
-  formatMedia (): void {
+  formatMedia (): ImageCarouselInterface[] | string | any[]{
     if(typeof this.ad.imageArray === 'object' ){
         if (this.ad.imageArray?.length > 1) {
             const mediaArray = this.ad.imageArray;
@@ -57,20 +57,22 @@ export class InfoCardComponent implements OnInit {
                return { url: `${environment.baseUrl}/assets/images/thumbs/${path}.jpg`}
             });
             newArray?.push({ url : `https://${this.ad.site}/${this.ad.image}`})
-            this.media = newArray as ImageCarouselInterface[];
-            console.log({media: this.media});
+            return newArray;
         } else {
-          this.media =  `${this.ad.site}/${this.ad.image}`;
-          return;
-        }
+          return `https://${this.ad.site}/${this.ad.image}`;
+      }
     }
+    return []
+  }
+
+  ngAfterViewInit(){
+        this.formatMedia();
   }
     
 
   ngOnInit(){
-    // this.formatMedia();
     // if (this.ad.post_date != undefined) {this.ad.post_date = `${+this.ad.post_date * 1000}`;}
-     
+    // this.formatMedia();
   }
 
   ngOnDestroy(){

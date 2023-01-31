@@ -12,6 +12,7 @@ export class VideoCarouselComponent {
   currentIndex: number = 0 ;
 
   getVideoUrl(): string {
+    if(!this.videos) { return '' };
     if (typeof this.videos === 'string') {
       return this.videos;
     }
@@ -19,15 +20,19 @@ export class VideoCarouselComponent {
   }
 
   goToNext(): void {
-    const isLastIndex = this.currentIndex === this.videos.length - 1;
-    const newIndex = isLastIndex ? 0 : this.currentIndex + 1;
-    this.currentIndex = newIndex;
+    if (this.videos) {
+      const isLastIndex = this.currentIndex === this.videos.length - 1;
+      const newIndex = isLastIndex ? 0 : this.currentIndex + 1;
+      this.currentIndex = newIndex;  
+    }
   }
 
   gotToPrevious(): void{
-    const isFirstSlide = this.currentIndex == 0;
-    const newIndex = isFirstSlide ? this.videos.length - 1 : this.currentIndex -1; 
-    this.currentIndex = newIndex;
+    if (this.videos) {
+      const isFirstSlide = this.currentIndex == 0;
+      const newIndex = isFirstSlide ? this.videos.length - 1 : this.currentIndex -1; 
+      this.currentIndex = newIndex;
+    }
   }
 
   typeofObj(value: string | object){
@@ -35,12 +40,14 @@ export class VideoCarouselComponent {
   }
 
   showCarouselButtons(): boolean {
+     if (this.videos) {
     if (this.typeofObj(this.videos) === 'string') {
       return false;
     }
     if (this.videos.length > 1) {
       return true;
     }
+  }
     return false;
   }
 }
