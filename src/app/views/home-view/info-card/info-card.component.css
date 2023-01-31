@@ -145,8 +145,12 @@
         font-size: 0.5rem;
     }
 
-    .wrapper .info .iconRow .time, .timedot{
+    .wrapper .info .iconRow .time{
         display: none;
+    }
+
+    .wrapper .info .timedot{
+        display: none!important;
     }
 
     .wrapper .info .details {
