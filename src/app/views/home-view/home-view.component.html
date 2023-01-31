@@ -7,7 +7,7 @@
             <app-filter-tab (filterValue)="filterByCounty($event)"></app-filter-tab>
         </section>
         <section class="cardListSection">
-            <cdk-virtual-scroll-viewport (scrolledIndexChange)="loadMoreData($event)" scrollWindow class="virtual-Veiw" [itemSize]="390">
+            <cdk-virtual-scroll-viewport (scrolledIndexChange)="loadMoreData($event)" scrollWindow class="virtual-Veiw" [itemSize]="215">
                 <app-info-card  class="infoCard" 
                 *cdkVirtualFor="let ad of list; let i = index" [ad]="ad">
                 </app-info-card> 
