@@ -4,7 +4,39 @@ footer{
     left: 0px;
     top: 1797px;
     background: #141030;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     padding: 64px 12.3% 0 12.3%;
+}
+
+.logonlinks {
+    display: flex;
+}
+
+.logoWrapper{
+    max-width: 39.1%;
+    margin-right: 48px;
+}
+
+.linkWrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 82px;
+}
+
+.linkseg1, .linkseg2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.linkseg1 > a, .linkseg2 > a {
+    text-decoration: none;
+    color: #FFFFFF;
 }
 
 @media screen and (max-width: 720px){

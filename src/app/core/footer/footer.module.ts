@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './footer.component';
+import { AppImageModule } from 'src/app/shared/components/atoms/image/image.module';
 
 
 
@@ -9,7 +10,8 @@ import { FooterComponent } from './footer.component';
     FooterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppImageModule
   ],
   exports: [FooterComponent]
 
