@@ -51,15 +51,15 @@ export class InfoCardComponent implements OnInit {
 
   formatMedia (): ImageCarouselInterface[] | string | any[]{
     if(typeof this.ad.imageArray === 'object' ){
-        if (this.ad.imageArray?.length > 1) {
+        if (this.ad.imageArray?.length > 0) {
             const mediaArray = this.ad.imageArray;
             const newArray = mediaArray?.map((path) => {
                return { url: `${environment.baseUrl}/assets/images/thumbs/${path}.jpg`}
             });
-            newArray?.push({ url : `https://${this.ad.site}/${this.ad.image}`})
+            // newArray?.push({ url : `https://${this.ad.site}/${this.ad.image}`})
             return newArray;
         } else {
-          return `https://${this.ad.site}/${this.ad.image}`;
+          return ``;
       }
     }
     return []
