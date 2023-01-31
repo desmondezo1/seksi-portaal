@@ -1,7 +1,5 @@
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
-import { Component, NgZone, OnInit, ViewChild } from '@angular/core';
-import { PaginationInstance } from 'ngx-pagination';
-import { BehaviorSubject, filter, from, map, pairwise, throttleTime } from 'rxjs';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdsInterface } from 'src/app/interfaces/ads.interface';
 import { AdsListInterface } from 'src/app/interfaces/adslist.interface';
 import { DataService } from 'src/app/services/data.service';
@@ -30,10 +28,7 @@ export class HomeViewComponent implements OnInit {
     scroller: CdkVirtualScrollViewport|null= null;
 
     public filter: string = '';
-    public maxSize: number = 7;
-    public directionLinks: boolean = true;
-    public autoHide: boolean = false;
-    public responsive: boolean = false;
+    public loading: boolean = false;
 
     ads: AdsListInterface | null = {
       requestTime: 0,
@@ -42,6 +37,7 @@ export class HomeViewComponent implements OnInit {
       };
 
       loadMoreData(index: number){
+        this.loading = true;
         if (index === this.list.length - 3) {
             this.offset += 20;
             this.dataService.getAds({offset: this.offset, limit: 20, from: this.list[index].post_date})
@@ -49,7 +45,7 @@ export class HomeViewComponent implements OnInit {
               next: (data: AdsListInterface) => {
               
               this.list = this.list.concat(data.list);
-            
+              this.loading = false;
               console.log({data})},
               error: (error) => { console.log({error})} })
           }

@@ -12,6 +12,12 @@
                 *cdkVirtualFor="let ad of list; let i = index" [ad]="ad">
                 </app-info-card> 
             </cdk-virtual-scroll-viewport>
+
+            <div [ngClass]="loading ? 'spinner': ''" >
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+              </div>
         </section>
        
 
