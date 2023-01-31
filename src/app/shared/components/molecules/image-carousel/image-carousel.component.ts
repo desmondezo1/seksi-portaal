@@ -21,7 +21,7 @@ export class ImageCarouselComponent {
         }
         return `${this.images[this.currentIndex]?.url}`
     } else {
-      return '';
+      return 'assets/images/avt.jpg';
     }
    
   }

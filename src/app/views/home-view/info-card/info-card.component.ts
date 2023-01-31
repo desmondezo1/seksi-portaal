@@ -54,7 +54,8 @@ export class InfoCardComponent implements OnInit {
         if (this.ad.imageArray?.length > 0) {
             const mediaArray = this.ad.imageArray;
             const newArray = mediaArray?.map((path) => {
-               return { url: `${environment.baseUrl}/assets/images/thumbs/${path}.jpg`}
+               return { url: `https://ulakas.b-cdn.net/assets/images/thumbs/${path}.jpg?aspect_ratio=1:1`}
+              //  return { url: `${environment.baseUrl}/assets/images/thumbs/${path}.jpg`}
             });
             // newArray?.push({ url : `https://${this.ad.site}/${this.ad.image}`})
             return newArray;
