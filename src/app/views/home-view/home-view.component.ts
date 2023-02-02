@@ -19,22 +19,20 @@ export class HomeViewComponent implements OnInit {
     constructor(
       private dataService: DataService, 
       private lightBoxService: LightBoxService
-      ){}
+    ){}
 
     
     boxIsOpened: boolean | undefined;
-
     offset: number = 0;
     total: number = 0;
     limit: number = 20;
     list: AdsInterface[] = [];
     theEnd: boolean = false;
+    selectedCounty: string = '';
     @ViewChild(CdkVirtualScrollViewport) 
     scroller: CdkVirtualScrollViewport|null= null;
-
     public filter: string = '';
     public loading: boolean = false;
-
     ads: AdsListInterface | null = {
       requestTime: 0,
       length: 0,
@@ -45,7 +43,7 @@ export class HomeViewComponent implements OnInit {
         this.loading = true;
         if (index === this.list.length - 3) {
             this.offset += 20;
-            this.dataService.getAds({offset: this.offset, limit: 20, from: this.list[index].post_date})
+            this.dataService.getAds({offset: this.offset, limit: 20, from: this.list[index].post_date, county: this.selectedCounty})
             .subscribe({
               next: (data: AdsListInterface) => {
               
@@ -71,6 +69,7 @@ export class HomeViewComponent implements OnInit {
     }
 
     filterByCounty(value: string): void{
+      localStorage.setItem('county', value);
       this.getAds({ offset: 0, limit: null,county: value})
     }
 
@@ -78,5 +77,6 @@ export class HomeViewComponent implements OnInit {
     ngOnInit(){
       this.lightBoxService.imageClicked.subscribe((isClicked) =>  this.boxIsOpened = isClicked)
       this.getAds();
+      this.selectedCounty = localStorage.getItem('county') || '';
     }
 }
