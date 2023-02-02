@@ -17,6 +17,7 @@ import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateAdViewModule } from './views/create-ad-view/create-ad-view.module';
 import { LightBoxComponent } from './shared/components/compounds/light-box/light-box.component';
+import { LightBoxService } from './services/lightBox.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,7 @@ import { LightBoxComponent } from './shared/components/compounds/light-box/light
     TestsModule,
     CreateAdViewModule,
   ],
-  providers: [DataService],
+  providers: [DataService, LightBoxService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

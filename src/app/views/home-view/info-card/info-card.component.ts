@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AdsInterface } from 'src/app/interfaces/ads.interface';
 import { ImageCarouselInterface } from 'src/app/interfaces/image-carousel.interface';
 import { VideoCarouselInterface } from 'src/app/interfaces/video-carousel.interface';
+import { LightBoxService } from 'src/app/services/lightBox.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -10,6 +11,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./info-card.component.css']
 })
 export class InfoCardComponent implements OnInit {
+
+  constructor(private lightBoxService: LightBoxService){}
+
   @Input() media: ImageCarouselInterface[] | VideoCarouselInterface[] | string = [
     {url: 'assets/images/cha.jpg'}, 
     {url: 'assets/images/sexycollege.png'}
@@ -19,6 +23,7 @@ export class InfoCardComponent implements OnInit {
   boxIsOpened: boolean | undefined;
 
   btn: string = '';
+
 
   isPhoneArrayAvailable (): boolean {
     if (typeof this.ad?.phoneArray === 'object') {
@@ -86,8 +91,7 @@ export class InfoCardComponent implements OnInit {
     
 
   ngOnInit(){
-    // if (this.ad.post_date != undefined) {this.ad.post_date = `${+this.ad.post_date * 1000}`;}
-    // this.formatMedia();
+    this.lightBoxService.imageClicked.subscribe((boxStatus) => this.boxIsOpened = boxStatus);
   }
 
   ngOnDestroy(){

@@ -7,14 +7,5 @@ import { Component } from '@angular/core';
 })
 export class TestsComponent {
 
-  boxIsOpened: boolean | undefined;
 
-  lightBoxIsOpened(value: boolean){
-    console.log('gets to test as '+ value)
-    this.boxIsOpened = value;
-  }
-
-  openBox(){
-    this.boxIsOpened = !this.boxIsOpened;
-  }
 }

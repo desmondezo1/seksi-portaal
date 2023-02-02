@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdsInterface } from 'src/app/interfaces/ads.interface';
 import { AdsListInterface } from 'src/app/interfaces/adslist.interface';
 import { DataService } from 'src/app/services/data.service';
+import { LightBoxService } from 'src/app/services/lightBox.service';
 interface Params {
   offset?: number;
   limit?: number | null;
@@ -17,7 +18,11 @@ export class HomeViewComponent implements OnInit {
 
     constructor(
       private dataService: DataService, 
+      private lightBoxService: LightBoxService
       ){}
+
+    
+    boxIsOpened: boolean | undefined;
 
     offset: number = 0;
     total: number = 0;
@@ -71,6 +76,7 @@ export class HomeViewComponent implements OnInit {
 
 
     ngOnInit(){
+      this.lightBoxService.imageClicked.subscribe((isClicked) =>  this.boxIsOpened = isClicked)
       this.getAds();
     }
 }

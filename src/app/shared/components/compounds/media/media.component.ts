@@ -10,6 +10,7 @@ import { VideoCarouselInterface } from 'src/app/interfaces/video-carousel.interf
 export class MediaComponent {
 
   @Input() media: string | VideoCarouselInterface[] | ImageCarouselInterface [] = '';
+  @Input() lightBoxMedia: string | VideoCarouselInterface[] | ImageCarouselInterface [] = '';
   @Input() styles: object = {};
 
   isImage: boolean = true;

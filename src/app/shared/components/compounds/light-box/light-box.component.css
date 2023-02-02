@@ -30,3 +30,14 @@
     align-items: center;
     z-index: 2;
 }
+
+.media ::ng-deep .wrapper ::ng-deep .slider{
+    height: 70vh;
+}
+
+@media screen and (max-width: 720px) {
+    .media ::ng-deep .wrapper ::ng-deep .slider{
+        height: 70vh;
+        width: 80vw;
+    }
+}

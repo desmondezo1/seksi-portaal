@@ -7,6 +7,7 @@ import { FilterTabModule } from './filter-tab/filter-tab.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { LightBoxModule } from 'src/app/shared/components/compounds/light-box/light-box.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     FilterTabModule,
     NgxPaginationModule,
     ScrollingModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    LightBoxModule
   ],
   exports: [HomeViewComponent]
 })

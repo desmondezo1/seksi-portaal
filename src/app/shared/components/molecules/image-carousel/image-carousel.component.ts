@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ImageCarouselInterface } from 'src/app/interfaces/image-carousel.interface';
+import { LightBoxService } from 'src/app/services/lightBox.service';
 
 @Component({
   selector: 'app-image-carousel',
@@ -8,7 +9,11 @@ import { ImageCarouselInterface } from 'src/app/interfaces/image-carousel.interf
 
 })
 export class ImageCarouselComponent {
+
+  constructor(private lightBoxService: LightBoxService){}
   @Input() images: ImageCarouselInterface[] | string = [];
+  @Input() lightBoxImages: ImageCarouselInterface[] | string = [];
+
 
   @Input() styles: object = {};
 
@@ -57,6 +62,14 @@ export class ImageCarouselComponent {
    }
     return false;
   
+  }
+
+  clickedImage(){
+    if (this.lightBoxImages) {
+      this.lightBoxService.setMedia(this.lightBoxImages)
+      this.lightBoxService.openLightBox();
+    }
+
   }
 
 }

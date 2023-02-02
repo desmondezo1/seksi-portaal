@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InfoCardComponent } from './info-card.component';
 import { MediaModule } from 'src/app/shared/components/compounds/media/media.module';
 import { LightBoxModule } from 'src/app/shared/components/compounds/light-box/light-box.module';
+import { LightBoxService } from 'src/app/services/lightBox.service';
 
 
 
@@ -13,8 +14,8 @@ import { LightBoxModule } from 'src/app/shared/components/compounds/light-box/li
   imports: [
     CommonModule,
     MediaModule,
-    LightBoxModule
   ],
+  providers: [LightBoxService],
   exports: [InfoCardComponent]
 })
 export class InfoCardModule { }
