@@ -6,6 +6,7 @@ import { ImageCarouselModule } from 'src/app/shared/components/molecules/image-c
 import { VideoCarouselModule } from 'src/app/shared/components/molecules/video-carousel/video-carousel.module';
 import { MediaModule } from 'src/app/shared/components/compounds/media/media.module';
 import { FilterTabModule } from '../home-view/filter-tab/filter-tab.module';
+import { LightBoxModule } from 'src/app/shared/components/compounds/light-box/light-box.module';
 
 
 
@@ -17,7 +18,8 @@ import { FilterTabModule } from '../home-view/filter-tab/filter-tab.module';
     ImageCarouselModule,
     VideoCarouselModule,
     MediaModule,
-    FilterTabModule
+    FilterTabModule,
+    LightBoxModule
   ],
   exports: [TestsComponent]
 })

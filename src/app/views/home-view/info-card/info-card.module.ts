@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InfoCardComponent } from './info-card.component';
 import { MediaModule } from 'src/app/shared/components/compounds/media/media.module';
+import { LightBoxModule } from 'src/app/shared/components/compounds/light-box/light-box.module';
 
 
 
@@ -11,7 +12,8 @@ import { MediaModule } from 'src/app/shared/components/compounds/media/media.mod
   ],
   imports: [
     CommonModule,
-    MediaModule
+    MediaModule,
+    LightBoxModule
   ],
   exports: [InfoCardComponent]
 })

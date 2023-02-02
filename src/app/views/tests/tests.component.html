@@ -5,9 +5,11 @@
 &nbsp;
 <!-- <app-filter-tab></app-filter-tab> -->
 &nbsp;
+<button (click)="openBox()"> click me </button>
 &nbsp;
-<app-info-card></app-info-card>
+<!-- <app-info-card></app-info-card> -->
 &nbsp;
+<app-light-box *ngIf="boxIsOpened" (lightBoxOpened)="lightBoxIsOpened($event)"></app-light-box>
 &nbsp;
 &nbsp;  
 </div>

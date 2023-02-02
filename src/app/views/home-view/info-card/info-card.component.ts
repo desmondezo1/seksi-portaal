@@ -16,6 +16,8 @@ export class InfoCardComponent implements OnInit {
   ]
   @Input() ad: AdsInterface = {}
 
+  boxIsOpened: boolean | undefined;
+
   btn: string = '';
 
   isPhoneArrayAvailable (): boolean {
@@ -49,15 +51,16 @@ export class InfoCardComponent implements OnInit {
     }
   }
 
-  formatMedia (): ImageCarouselInterface[] | string | any[]{
+  formatMedia (full = false): ImageCarouselInterface[] | string | any[]{
     if(typeof this.ad.imageArray === 'object' ){
         if (this.ad.imageArray?.length > 0) {
             const mediaArray = this.ad.imageArray;
             const newArray = mediaArray?.map((path) => {
+              if (full){
+                return { url: `${environment.baseUrl}/assets/images/thumbs/${path}.jpg`}
+              }
                return { url: `https://ulakas.b-cdn.net/assets/images/thumbs/${path}.jpg?aspect_ratio=1:1`}
-              //  return { url: `${environment.baseUrl}/assets/images/thumbs/${path}.jpg`}
             });
-            // newArray?.push({ url : `https://${this.ad.site}/${this.ad.image}`})
             return newArray;
         } else {
           return ``;
@@ -68,6 +71,17 @@ export class InfoCardComponent implements OnInit {
 
   ngAfterViewInit(){
         this.formatMedia();
+  }
+
+
+
+  lightBoxIsOpened(value: boolean){
+    console.log('gets to test as '+ value)
+    this.boxIsOpened = value;
+  }
+
+  openBox(){
+    this.boxIsOpened = !this.boxIsOpened;
   }
     
 
