@@ -5,7 +5,7 @@
 .wrapper{
     max-width: 700px;
     height: 100%;
-    max-height: 200px;
+    max-height: auto;
     min-width: 100%;
     background: #141030;
     border-radius: 10px;
